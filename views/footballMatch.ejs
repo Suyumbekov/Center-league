@@ -1,0 +1,20 @@
+<div class="container mt-3 w-75 mh-auto bg-light">
+  <div class="bg-secondary text-white w-100 ps-2">Матчи</div>
+  <% for(let i = 0; i < matches.length; i++){ %>
+  <div class="match d-flex justify-content-center border-top py-2">
+    <div class="ht d-flex w-50 pe-1 justify-content-end">
+      <span class="team me-2"><%= matches[i].team_1 %> </span>
+      <span class="score bg-info text-white px-1"
+        ><%= matches[i].goal_1 %></span
+      >
+    </div>
+
+    <div class="at w-50">
+      <span class="score bg-info text-white px-1"
+        ><%= matches[i].goal_2 %></span
+      >
+      <span class="team ms-2"><%= matches[i].team_2 %></span>
+    </div>
+  </div>
+  <% } %>
+</div>

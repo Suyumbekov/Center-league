@@ -1,0 +1,32 @@
+<div class="container mt-3 w-75 px-2">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Команда</th>
+        <th>И</th>
+        <th>В</th>
+        <th>Н</th>
+        <th>П</th>
+        <th>+/-</th>
+        <th>О</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < teams.length; i++){ %>
+      <tr>
+        <td><%= (i+1) %></td>
+        <td>
+          <img class="logo" src="<%=teams[i].img%>" /> <%= teams[i].title %>
+        </td>
+        <td><%= teams[i].games %></td>
+        <td><%= teams[i].won %></td>
+        <td><%= teams[i].draw %></td>
+        <td><%= teams[i].lost %></td>
+        <td><%= teams[i].gf + ' - ' + teams[i].ga %></td>
+        <td><%= teams[i].points %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

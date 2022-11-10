@@ -1,0 +1,45 @@
+<%- include('./partials/header'); %>
+<nav class="navbar navbar-expand bg-primary navbar-dark shadow">
+  <div class="container justify-content-center align-content-end pt-4">
+    <ul class="navbar-nav w-50 justify-content-between align-content-end px-2">
+      <li class="navbar-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          >ФУТБОЛ</a
+        >
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/football/match">Матчи</a></li>
+          <li>
+            <a class="dropdown-item" href="/football/table">Таблица</a>
+          </li>
+        </ul>
+      </li>
+      <li class="navbar-item">
+        <a class="nav-link" href="/volleyball/table">ВОЛЕЙБОЛ</a>
+      </li>
+      <li class="navbar-item">
+        <a class="nav-link" href="/chess/table">ШАХМАТ</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-3 w-75 px-3">
+  <section class="d-flex flew-row">
+    <div class="wrapper me-5">
+      <div class="league">Лига</div>
+      <div class="name">Центр Лига</div>
+    </div>
+    <div class="wrapper">
+      <div class="season">Сезон</div>
+      <div class="year">2022-2023</div>
+    </div>
+  </section>
+</div>
+<% if ( typeof teams !== 'undefined') { %> <%-
+include('./partials/footballTable', {teams: teams}); %> <% } else if(matches) {
+%> <%- include('./footballMatch', {matches: matches}); %> <% } %> <%-
+include('./partials/footer'); %>
